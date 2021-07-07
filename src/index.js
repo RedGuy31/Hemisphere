@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 
-
-
-
-
 class App extends React.Component {
 
-constructor(){
-    
+constructor(props){
+super(props)
+
+this.state = { latitude:25}
+
 }
 
 
@@ -22,7 +21,7 @@ constructor(){
             (Error) => console.log(Error)
         );
         return(
-            <div>Yoooo</div>
+            <div>{ this.state.latitude}</div>
         )
     }
 }
