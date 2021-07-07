@@ -21,12 +21,15 @@ window.navigator.geolocation.getCurrentPosition(
 }
 
     render() {
-      
-        return(
-            <div>{ this.state.latitude}
-            {this.state.errorMessage}
-            </div>
-        )
+      if(this.state.errorMessage && !this.state.latitude){
+          return <div> {this.state.errorMessage} </div>
+      }
+       if(!this.state.errorMessage && this.state.latitude){
+           return <div> {this.state.latitude} </div>
+       }
+       else {
+           return <div> Loading...</div>
+       }
     }
 }
 
