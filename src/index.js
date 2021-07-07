@@ -9,7 +9,10 @@ super(props)
 this.state = { latitude:25}
 
 window.navigator.geolocation.getCurrentPosition(
-    (position) => console.log(position),
+  (position) => {
+      this.setState( { latitude: position.coords.latitude})
+  },
+    
     (Error) => console.log(Error)
 );
 
