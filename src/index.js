@@ -23,7 +23,9 @@ window.navigator.geolocation.getCurrentPosition(
     render() {
       
         return(
-            <div>{ this.state.latitude}</div>
+            <div>{ this.state.latitude}
+            {this.state.errorMessage}
+            </div>
         )
     }
 }
